@@ -1,0 +1,78 @@
+<div class="example-container">
+  <mat-form-field appearance="fill">
+    <mat-label>Enter your email</mat-label>
+    <input matInput placeholder="pat@example.com" [formControl]="email" required>
+    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+
+  </mat-form-field>
+</div>
+
+<form class="example-form" [formGroup]="">
+  <!-- <mat-form-field class="example-full-width">
+    <mat-label>Company (disabled)</mat-label>
+    <input matInput disabled value="Google">
+  </mat-form-field> -->
+
+  <table class="example-full-width" cellspacing="0">
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>First name</mat-label>
+          <input matInput placeholder="First name">
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>Long Last Name That Will Be Truncated</mat-label>
+          <input matInput placeholder="Long Last Name">
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <p>
+    <mat-form-field class="example-full-width">
+      <mat-label>Address</mat-label>
+      <textarea matInput placeholder="Ex. 100 Main St"></textarea>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label></mat-label>
+      <textarea matInput placeholder="note"></textarea>
+    </mat-form-field>
+  </p>
+
+  <table class="example-full-width" cellspacing="0">
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>City</mat-label>
+          <input matInput placeholder="Ex: Ho Chi Minh city">
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>State</mat-label>
+          <input matInput placeholder="Ex: district 1">
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>Postal Code</mat-label>
+          <input matInput #postalCode maxlength="5" placeholder="postal code">
+          <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+  <mat-form-field appearance="fill">
+
+      <mat-label>Enter your password</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" placeholder="Create your password">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+  </mat-form-field>
+
+
+
+</form>
